@@ -8,7 +8,9 @@ import { EventContext } from "@/context/appointment_contex";
 
 const localizer = momentLocalizer(moment);
 
-interface SummaryPageProps {}
+interface SummaryPageProps {
+  dummyProp?: string;
+}
 
 const SummaryPage: FC<SummaryPageProps> = () => {
   const {
