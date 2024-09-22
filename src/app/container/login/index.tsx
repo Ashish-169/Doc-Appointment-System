@@ -4,10 +4,9 @@ import { Form, Input, Button } from "antd";
 import Link from "next/link";
 import { EventContext } from "@/context/appointment_contex";
 import { LoginType } from "@/types/LoginType";
-import { log } from "console";
 
 const LoginPage: FC = () => {
-  const { login, loginData, setLoginData } = useContext(EventContext) || {};
+  const { login, setLoginData } = useContext(EventContext) || {};
 
   // Handle form change
   const handleChange = (changedValues: any) => {

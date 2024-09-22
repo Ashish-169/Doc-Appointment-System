@@ -3,15 +3,7 @@ import { fetchService } from "@/services/fetch_services";
 import { LoginType } from "@/types/LoginType";
 import { RegisterType } from "@/types/RegisterType";
 import { useRouter } from "next/navigation";
-import {
-  createContext,
-  Dispatch,
-  FC,
-  ReactNode,
-  SetStateAction,
-  useEffect,
-  useState,
-} from "react";
+import { createContext, FC, ReactNode, useEffect, useState } from "react";
 import { Appointment } from "@/types/Appointment";
 import { AppointmentDetails } from "@/types/AppointmentDetails";
 
