@@ -11,7 +11,7 @@ const nextConfig = {
     return [
       {
         source: "/",
-        destination: "/create-event",
+        destination: "/login",
         permanent: true,
       },
     ];
