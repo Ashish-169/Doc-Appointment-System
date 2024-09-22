@@ -18,12 +18,17 @@ export type EventContextType = {
   getAppointment: any;
   appointments: any;
   deleteAppointment: any;
+  setName: any;
+  name: string;
 };
 
 export const EventContext = createContext<EventContextType | null>(null);
 
 export const EventProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const router = useRouter();
+
+  const [name, setName] = useState<string>("");
+
   const [loginData, setLoginData] = useState<LoginType>({
     email: "",
     password: "",
@@ -162,6 +167,8 @@ export const EventProvider: FC<{ children: ReactNode }> = ({ children }) => {
     getAppointment,
     appointments,
     deleteAppointment,
+    setName,
+    name,
   };
 
   return (

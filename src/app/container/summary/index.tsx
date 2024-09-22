@@ -20,17 +20,24 @@ const SummaryPage: FC<SummaryPageProps> = () => {
     getAppointment,
     appointments,
     deleteAppointment,
+    loginData,
   } = useContext(EventContext) || {};
 
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isDeleteModalVisible, setIsDeleteModalVisible] = useState(false);
   const [selectedEventId, setSelectedEventId] = useState<string | null>(null);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
-
-  const userName = localStorage.getItem("userName") || "";
-  const userEmail = localStorage.getItem("userEmail") || "";
+  const [userName, setUserName] = useState<string>("");
+  const [userEmail, setUserEmail] = useState<string>("");
 
   const [form] = Form.useForm();
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      // This code runs only in the browser
+      setUserName(localStorage.getItem("userName") || "");
+      setUserEmail(localStorage.getItem("userEmail") || "");
+    }
+  }, []);
 
   useEffect(() => {
     console.log("selectedEventId: ", selectedEventId);
@@ -39,6 +46,10 @@ const SummaryPage: FC<SummaryPageProps> = () => {
   useEffect(() => {
     getAppointment(userEmail);
   }, [userEmail]);
+
+  useEffect(() => {
+    console.log("Login Data:", loginData);
+  });
 
   const events =
     appointments?.map((appointment: any) => ({

@@ -20,6 +20,8 @@ const LoginPage: FC = () => {
   // Handle form submission
   const handleSubmit = async (values: LoginType) => {
     // Update loginData state with the submitted values
+    console.log("Login Values: ", values);
+
     setLoginData(values);
 
     // Proceed to login
